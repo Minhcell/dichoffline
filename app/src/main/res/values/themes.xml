@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DichThuatPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#38bdf8</item>
+        <item name="colorPrimaryVariant">#0ea5e9</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorSecondary">#34d399</item>
+        <item name="android:statusBarColor">#0f172a</item>
+        <item name="android:navigationBarColor">#0f172a</item>
+        <item name="android:windowBackground">#0f172a</item>
+    </style>
+</resources>
