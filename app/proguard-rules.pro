@@ -1,3 +1,8 @@
--keep class org.vosk.** { *; }
--keep class com.sun.jna.** { *; }
--dontwarn java.awt.**
+# Keep JS Interface
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+-keepattributes JavascriptInterface
+
+# Keep BuildConfig
+-keep class com.dichthuat.pro.BuildConfig { *; }
