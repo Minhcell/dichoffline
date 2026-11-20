@@ -30,19 +30,13 @@ jobs:
         yes | "$SM" --licenses > /dev/null || true
         "$SM" "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
-    - name: Validate Gradle wrapper
-      run: |
-        echo "--- gradlew info ---"
-        file gradlew
-        ls -la gradle/wrapper/gradle-wrapper.jar
-        echo "--- check jar ---"
-        file gradle/wrapper/gradle-wrapper.jar
-
-    - name: Make gradlew executable
-      run: chmod +x gradlew
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
 
     - name: Build Debug APK
-      run: ./gradlew assembleDebug --no-daemon --stacktrace
+      run: gradle assembleDebug --no-daemon --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
